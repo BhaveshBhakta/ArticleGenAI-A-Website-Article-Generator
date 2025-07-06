@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArticleGenAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-magic"></i>
+                    <h1>ArticleGenAI</h1>
+                </div>
+                <p class="subtitle">Turn Any Webpage into a Ready-to-Publish Article</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="generator-section">
+                <div class="input-section">
+                    <h2>Generate Your Article</h2>
+                    <form id="articleForm">
+                        <div class="input-group">
+                            <label for="websiteUrl">Website URL</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-globe"></i>
+                                <input 
+                                    type="url" 
+                                    id="websiteUrl" 
+                                    name="url" 
+                                    placeholder="https://example.com/article"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        <button type="submit" class="generate-btn" id="generateBtn">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                            Generate Article
+                        </button>
+                    </form>
+                </div>
+
+                <div id="loadingState" class="loading-state hidden">
+                    <div class="loader">
+                        <div class="spinner"></div>
+                        <p>Generating your article...</p>
+                        <div class="progress-steps">
+                            <div class="step active">
+                                <i class="fas fa-download"></i>
+                                <span>Loading content</span>
+                            </div>
+                            <div class="step">
+                                <i class="fas fa-brain"></i>
+                                <span>Analyzing</span>
+                            </div>
+                            <div class="step">
+                                <i class="fas fa-pen"></i>
+                                <span>Writing article</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="resultsSection" class="results-section hidden">
+                    <div class="results-header">
+                        <h2>Generated Article</h2>
+                        <div class="results-actions">
+                            <button class="action-btn" id="copyBtn">
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                            <button class="action-btn" id="downloadBtn">
+                                <i class="fas fa-download"></i>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="article-container">
+                        <div class="article-meta">
+                            <span class="source-url">Source: <a href="#" id="sourceUrl" target="_blank"></a></span>
+                            <span class="generated-time">Generated: <span id="generatedTime"></span></span>
+                        </div>
+                        <div class="article-content" id="articleContent">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div id="errorState" class="error-state hidden">
+                    <div class="error-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Oops! Something went wrong</h3>
+                    <p id="errorMessage">Please try again with a different URL.</p>
+                    <button class="retry-btn" id="retryBtn">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 ArticleGenAI — Empowering content creation through AI.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>     

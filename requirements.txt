@@ -1,0 +1,10 @@
+python-docx==1.2.0
+langchain==0.3.26
+langchain-community==0.3.26
+langchain-core==0.3.66
+langchain-groq==0.3.4
+requests==2.32.4
+python-dotenv==1.1.1
+beautifulsoup4==4.13.4
+gunicorn==23.0.0
+Flask==3.1.1
