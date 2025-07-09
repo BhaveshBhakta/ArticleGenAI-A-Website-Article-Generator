@@ -39,6 +39,8 @@ This project showcases the synergy of **Natural Language Understanding (NLU)**, 
 ---
 ## Demo Screenshot
 
+![image](https://github.com/user-attachments/assets/f087afce-6d24-454b-95cf-3f02c12ab882)
+
 ---
 
 ## Setup Instructions
